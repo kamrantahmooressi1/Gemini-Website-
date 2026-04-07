@@ -3,24 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>MGMT342 Professor Humphrey</title>
     <style>
         body {
-            background-color: #003300; /* A shade of Green */
-            color: #FFD700;           /* A shade of Gold */
-            font-family: Arial, sans-serif;
+            /* The base background color */
+            background-color: #003300; 
+            color: #FFD700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            
+            /* SVG mountain background, encoded for CSS */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 300'%3E%3Cpath d='M0,300 L0,150 Q250,50 500,150 T1000,150 L1000,300 Z' fill='%23002200'/%3E%3Cpath d='M-100,300 L-100,200 Q150,120 400,200 T900,180 L900,300 Z' fill='%23002a00'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            background-size: cover;
+        }
+        .header-art {
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(45deg, rgba(0, 51, 0, 0.6), rgba(0, 77, 0, 0.8));
+            backdrop-filter: blur(2px);
+        }
+        .main-content {
+            flex-grow: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            text-align: center;
         }
-        h1 {
-            font-size: 5em;
+        .main-content h1 {
+            font-size: 3.5em; 
+            padding: 30px;
+            border: 2px solid #FFD700;
+            border-radius: 15px;
+            background-color: rgba(0, 20, 0, 0.5);
+            text-shadow: 2px 2px 6px #000;
+            backdrop-filter: blur(5px);
+        }
+        .footer-greenery {
+            width: 100%;
+            height: 180px; /* Made taller */
+            position: relative;
+            bottom: 0;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
+
+    <header class="header-art">
+        <svg width="100%" height="80" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:%23FFD700; stop-opacity:0.8" />
+                    <stop offset="100%" style="stop-color:%23B8860B; stop-opacity:0.9" />
+                </linearGradient>
+            </defs>
+            <rect x="10%" y="20" width="15" height="40" fill="url(%23goldGradient)" rx="5"/>
+            <circle cx="20%" cy="40" r="25" fill="none" stroke="url(%23goldGradient)" stroke-width="3" />
+            <rect x="30%" y="10" width="100" height="60" fill="none" stroke="url(%23goldGradient)" stroke-width="2" transform="rotate(15, 350, 40)"/>
+            <path d="M 50% 20 C 52% 60, 58% 60, 60% 20" stroke="url(%23goldGradient)" stroke-width="4" fill="none"/>
+            <polygon points="70%,20 75%,60 80%,20" fill="rgba(255, 215, 0, 0.1)" stroke="url(%23goldGradient)" stroke-width="2"/>
+        </svg>
+    </header>
+
+    <div class="main-content">
+        <h1>Hello World! Welcome, MGMT342 Professor Humphrey</h1>
+    </div>
+
+    <footer class="footer-greenery">
+        <svg width="100%" height="100%" viewBox="0 0 1000 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                 <linearGradient id="treeGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#002100" />
+                    <stop offset="100%" stop-color="#001a00" />
+                </linearGradient>
+            </defs>
+            <!-- Ground -->
+            <path d="M0,180 L1000,180 L1000,150 C800,170 600,140 400,160 C200,180 100,150 0,170 Z" fill="url(%23treeGradient)" />
+            
+            <!-- Trees - made more prominent -->
+            <path d="M80,155 l25,-50 l25,50 z M130,155 l-15,-30 l-15,30 z" fill="#001a00" />
+            <path d="M180,160 l35,-70 l35,70 z M250,160 l-20,-40 l-20,40 z" fill="#001500" />
+            <path d="M330,170 l45,-90 l45,90 z M420,170 l-25,-50 l-25,50 z" fill="#001800" />
+            <path d="M530,150 l30,-60 l30,60 z" fill="#001a00" />
+            <path d="M680,165 l40,-80 l40,80 z M760,165 l-20,-40 l-20,40 z" fill="#001200" />
+            <path d="M830,158 l28,-55 l28,55 z" fill="#001f00" />
+        </svg>
+    </footer>
+
 </body>
 </html>
